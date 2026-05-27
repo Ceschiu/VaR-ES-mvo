@@ -17,6 +17,7 @@ def plot_var(w: pd.Series, rend:pd.DataFrame, var_param:float, es_param:float, v
     ax.axvline(x=-es_mc, color="blue", linestyle=":", label="ES MC")
 
     plt.legend()
+    plt.title(f"VaR & ES al {alpha:.0%}")
     base = os.path.dirname(__file__)
     path = os.path.join(base, "VaR_ES.png")
     plt.savefig(path, dpi=150, bbox_inches="tight")
