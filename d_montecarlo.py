@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import scipy.stats as stats
 
 def VaR_MonteCarlo(w:pd.Series, rend:pd.DataFrame, alpha:float = 0.95, n_sim:int = 10000) -> tuple[float,float]:
     """Calcola il VaR e l'ES annualizzati di un portafoglio, utilizzando una simulazione MC e assumento rendimenti normalmente distribuiti"""
