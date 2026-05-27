@@ -11,7 +11,7 @@ def VaR_parametric(w:pd.Series, rend:pd.DataFrame, alpha:float = 0.95) -> tuple[
     vol_ptf = np.sqrt(w@Sigma@w)
     
     # Calcolo VaR e ES del ptf con confidenza alpha
-    VaR = -(mu_ptf + vol_ptf * stats.norm.ppf(1-alpha))
-    ES = -(mu_ptf - vol_ptf * stats.norm.pdf(stats.norm.ppf(1-alpha))/(1-alpha))
+    VaR = -(mu_ptf - vol_ptf * stats.norm.ppf(alpha))
+    ES = -(mu_ptf - vol_ptf * stats.norm.pdf(stats.norm.ppf(alpha))/(1-alpha))
     
     return (VaR,ES)
