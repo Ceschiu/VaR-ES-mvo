@@ -15,3 +15,4 @@ def VaR_parametric(w:pd.Series, rend:pd.DataFrame, alpha:float = 0.95) -> tuple[
     ES = -(mu_ptf - vol_ptf * stats.norm.pdf(stats.norm.ppf(alpha))/(1-alpha))
     
     return (VaR,ES)
+    
