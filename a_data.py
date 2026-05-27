@@ -3,11 +3,15 @@ import numpy as np
 import yfinance as yf
 import os
 
+# Import TgP weights from the folder
 base = os.path.dirname(__file__)
 TgP = pd.read_csv(os.path.join(base, "TgP_weights.csv"), index_col=0)
+
+# Create the ticker vector for the non-null weights of the TgP 
 weights = TgP.iloc[:,0]
 weights = weights[weights>0]
 tickers = list(weights.index)
+# Time window
 start = "2016-04-30"
 end = "2026-04-30"
 
