@@ -12,8 +12,8 @@ weights = TgP.iloc[:,0]
 weights = weights[weights>0]
 tickers = list(weights.index)
 # Time window
-start = "2016-04-30"
-end = "2026-04-30"
+start = "2016-03-31"
+end = "2026-03-31"
 
 def get_returns(tickers: list, start: str, end: str) -> pd.DataFrame:
     """Funzione che ritorna un df di log-rendimenti dei ticker di interesse nella finestra temporale richiesta"""
